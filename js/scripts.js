@@ -6,11 +6,11 @@ $(document).ready(function() {
   $("#hint").click(function() {
     $("#hinttext").toggle();
   });
-  var word = ["JavaScript", "Operators", "Variables", "Variable naming conventions", "Functions", "Methods",
-              "Arguments", "Parameters", "Return", "Chaining methods", "Strings", "Booleans", "Undefined",
-              "NaN", "Escape", "Alert", "Comments", "jQuery", "Attributes"];
-  var definition = ["an object-oriented computer programming language commonly used to create interactive effects within web browsers",
-                    "a symbol that is used to perform an operation",
+  var word = ["JavaScript", "Operators", "Variables", "Variable naming conventions", "Functions",
+              "Methods", "Arguments", "Parameters", "Return", "Chaining methods", "Strings", "Booleans",
+              "Undefined", "NaN", "Escape", "Alert", "Comments", "jQuery", "Attributes"];
+  var definition = ["an object-oriented language used to create interactive effects within web browsers",
+                    "symbols that are used to perform an operation: +, -, *, /, =, %, >, <, ^, |, &, !",
                     "hold the data value and it can be changed anytime",
                     "lowerCamelCase",
                     "a set of statements that performs a task or calculates a value",
@@ -27,8 +27,26 @@ $(document).ready(function() {
                     "the alert box that pops up",
                     "code that is not run by the compiler, used to give notes",
                     "library of .js code",
-                    "style that can be assigned in .js files"
-                    ]
+                    "styles that can be assigned in .js files"];
+  var hint = ["it's what you're using right now!",
+              "think of a calculator",
+              "if you can't get this, give up",
+              "hump DAY",
+              "myFunc",
+              "think of .toUpperCase()",
+              "myFunc(argument)",
+              "myFunc(parameter) (not a copy of the last hint)",
+              "myFunc() {... return ...}",
+              ".prepend(...).toUpperCase()",
+              "sentences",
+              "1 or 0",
+              "var x = y is defining something",
+              "0/0",
+              "escape(), idk man",
+              "alert(...)",
+              "//.... in .js, <!-- --> in .html",
+              "$(...)",
+              ".css('...', '...')"];
   var i = 0;
   $("#previous").click(function() {
     i -= 1;
@@ -45,20 +63,25 @@ $(document).ready(function() {
     };
     $("#front").children("h1").text(word[i]);
     $("#back").children("h1").text(definition[i]);
+    $("#hint").children("#hinttext").text(hint[i]);
   });
   $("button#light-theme").click(function() {
     $("body").removeClass();
     $("body").addClass("light-theme");
+    $("body").css("background-color", "lightgrey");
     $(".well").css("background-color", "white");
-    $("#front").css("background-color", "grey");
-    $("#back").css("background-color", "lightgrey");
+    $("#front").css("background-color", "#eeeeee");
+    $("#back").css("background-color", "#eeeeee");
+    $(".well").children("*").css("color", "#557a95");
   });
   $("button#dark-theme").click(function() {
     $("body").removeClass();
     $("body").addClass("dark-theme");
-    $(".well").css("background-color", "grey");
-    $("#front").css("background-color", "black");
-    $("#back").css("background-color", "darkgrey");
+    $("body").css("background-color", "#5D5C61");
+    $(".well").css("background-color", "#bababa");
+    $("#front").css("background-color", "#949494");
+    $("#back").css("background-color", "#949494");
+    $(".well").children("*").css("color", "#557a95");
   });
 
 });
