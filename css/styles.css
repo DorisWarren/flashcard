@@ -1,15 +1,18 @@
 #back {
-  transition: 1s;
+  margin-top: 15px;
   display: none;
   background-color: #eeeeee;
   width: 100%;
   height: 400px;
+  border: black 2px solid;
 }
 #front {
+  margin-top: 15px;
   transition: 1s;
   background-color: #eeeeee;
   width: 100%;
   height: 400px;
+  border: black 2px solid;
 }
 
 #light-theme {
@@ -19,6 +22,7 @@
 #header {
   margin-left: 25%;
   margin-right: 25%;
+  border: black 2px solid;
 }
 
 #open:hover, #close:hover, #toc li:hover {
@@ -32,6 +36,13 @@
 
 #page {
 min-height: 450px;
+border: black 2px solid;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -48,8 +59,13 @@ body {
 }
 
 #hint {
-  margin-left: 40%;
-  margin-right: 40%;
+  margin-left: 20%;
+  margin-right: 20%;
+  border: black 2px solid;
+}
+
+#study {
+  border: black 2px solid;
 }
 
 .well {

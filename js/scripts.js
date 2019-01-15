@@ -80,6 +80,12 @@ $(document).ready(function() {
     $("#front").children("h1").text(word[i]);
     $("#back").children("h1").text(definition[i]);
     $("#hint").children("#hinttext").text(hint[i]);
+    $("#front").show();
+    $("#back").hide();
+  });
+
+  $("#addWord").click(function() {
+    $("ul#wordList").append("<li>" + word[i] + "</li>");
   });
 
   $("#next").click(function() {
@@ -90,6 +96,8 @@ $(document).ready(function() {
     $("#front").children("h1").text(word[i]);
     $("#back").children("h1").text(definition[i]);
     $("#hint").children("#hinttext").text(hint[i]);
+    $("#front").show();
+    $("#back").hide();
   });
 
   $("button#light-theme").click(function() {
