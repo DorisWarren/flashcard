@@ -63,13 +63,15 @@ $(document).ready(function() {
 
   $("#toc").children("li").click(function() {
     i = $(this).index();
-    console.log(i);
-
-
     $("#front").children("h1").text(word[i]);
     $("#back").children("h1").text(definition[i]);
     $("#hint").children("#hinttext").text(hint[i]);
+    $("#open").toggle();
+    $("#close").toggle();
+    $("#toc").toggle();
+    $("#jump").toggle();
   });
+
   $("#previous").click(function() {
     i -= 1;
     if (i < 0) {
@@ -79,6 +81,7 @@ $(document).ready(function() {
     $("#back").children("h1").text(definition[i]);
     $("#hint").children("#hinttext").text(hint[i]);
   });
+
   $("#next").click(function() {
     i += 1;
     if (i > 18) {
@@ -88,6 +91,7 @@ $(document).ready(function() {
     $("#back").children("h1").text(definition[i]);
     $("#hint").children("#hinttext").text(hint[i]);
   });
+
   $("button#light-theme").click(function() {
     $("body").removeClass();
     $("body").addClass("light-theme");
@@ -96,7 +100,11 @@ $(document).ready(function() {
     $("#front").css("background-color", "#eeeeee");
     $("#back").css("background-color", "#eeeeee");
     $(".well").children("*").css("color", "#557a95");
+    $("button#light-theme").toggle();
+    $("button#dark-theme").toggle();
+    $("body").css("background-image", "url(img/snooplite.gif)");
   });
+
   $("button#dark-theme").click(function() {
     $("body").removeClass();
     $("body").addClass("dark-theme");
@@ -105,6 +113,9 @@ $(document).ready(function() {
     $("#front").css("background-color", "#949494");
     $("#back").css("background-color", "#949494");
     $(".well").children("*").css("color", "#557a95");
+    $("button#light-theme").toggle();
+    $("button#dark-theme").toggle();
+    $("body").css("background-image", "url(img/snoopdark.gif)");
   });
 
 });
