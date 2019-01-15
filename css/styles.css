@@ -13,7 +13,7 @@
 }
 
 #page {
-height: 450px;
+min-height: 450px;
 }
 
 
@@ -22,6 +22,7 @@ height: 450px;
 }
 
 .well {
+  padding: 10px;
   border-radius: 20px;
 }
 
