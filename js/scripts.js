@@ -3,6 +3,18 @@ $(document).ready(function() {
     $("#front").toggle();
     $("#back").toggle();
   });
+  $("#open").click(function() {
+    $("#open").toggle();
+    $("#close").toggle();
+    $("#toc").toggle();
+    $("#jump").toggle();
+  });
+  $("#close").click(function() {
+    $("#open").toggle();
+    $("#close").toggle();
+    $("#toc").toggle();
+    $("#jump").toggle();
+  });
   $("#hint").click(function() {
     $("#hinttext").toggle();
   });
@@ -11,7 +23,7 @@ $(document).ready(function() {
               "Undefined", "NaN", "Escape", "Alert", "Comments", "jQuery", "Attributes"];
   var definition = ["an object-oriented language used to create interactive effects within web browsers",
                     "symbols that are used to perform an operation: +, -, *, /, =, %, >, <, ^, |, &, !",
-                    "hold the data value and it can be changed anytime",
+                    "hold the data value and can be changed anytime",
                     "lowerCamelCase",
                     "a set of statements that performs a task or calculates a value",
                     "a function that acts upon an element",
@@ -23,8 +35,8 @@ $(document).ready(function() {
                     "binary values, true or false",
                     "the result of not assigning value to a variable",
                     "a value that is not recognized as a number",
-                    "makes a string portable",
-                    "the alert box that pops up",
+                    "function that makes a string portable",
+                    "function to make a pop-up window",
                     "code that is not run by the compiler, used to give notes",
                     "library of .js code",
                     "styles that can be assigned in .js files"];
@@ -48,6 +60,16 @@ $(document).ready(function() {
               "$(...)",
               ".css('...', '...')"];
   var i = 0;
+
+  $("#toc").children("li").click(function() {
+    i = $(this).index();
+    console.log(i);
+
+
+    $("#front").children("h1").text(word[i]);
+    $("#back").children("h1").text(definition[i]);
+    $("#hint").children("#hinttext").text(hint[i]);
+  });
   $("#previous").click(function() {
     i -= 1;
     if (i < 0) {
@@ -55,6 +77,7 @@ $(document).ready(function() {
     };
     $("#front").children("h1").text(word[i]);
     $("#back").children("h1").text(definition[i]);
+    $("#hint").children("#hinttext").text(hint[i]);
   });
   $("#next").click(function() {
     i += 1;

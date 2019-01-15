@@ -1,16 +1,27 @@
 #back {
   transition: 1s;
   display: none;
-  background-color: lightgrey;
+  background-color: #eeeeee;
   width: 100%;
   height: 400px;
 }
 #front {
   transition: 1s;
-  background-color: grey;
+  background-color: #eeeeee;
   width: 100%;
   height: 400px;
 }
+
+#header {
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+#open:hover, #close:hover, #toc li:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 #previous {
   margin-bottom: 10px;
 }
@@ -21,15 +32,30 @@ min-height: 450px;
 
 body {
   font-family: serif;
+  background-color: lightgrey;
 }
 
 #hinttext {
   display: none;
 }
 
+#close, #jump, #toc {
+  display: none;
+}
+
+#hint {
+  margin-left: 40%;
+  margin-right: 40%;
+}
+
 .well {
+  background-color: white;
   padding: 10px;
   border-radius: 20px;
+}
+
+.well * {
+  color: #557a95;
 }
 
 body {
